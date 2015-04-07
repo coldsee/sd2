@@ -178,11 +178,11 @@ void instance_molten_core::DoSpawnMajordomoIfCan(bool bByPlayerEnter)
         return;
 
     // Check if all rune bosses are done
-    for (uint8 i = TYPE_MAGMADAR; i < TYPE_MAJORDOMO; ++i)
-    {
-        if (m_auiEncounter[i] != SPECIAL)
-            return;
-    }
+//wwmadd    for (uint8 i = TYPE_MAGMADAR; i < TYPE_MAJORDOMO; ++i)
+//wwmadd    {
+//wwmadd        if (m_auiEncounter[i] != SPECIAL)
+//wwmadd            return;
+//wwmadd    }
 
     Player* pPlayer = GetPlayerInMap();
     if (!pPlayer)

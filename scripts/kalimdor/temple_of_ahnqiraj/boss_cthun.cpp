@@ -1,4 +1,4 @@
-/* This file is part of the ScriptDev2 Project. See AUTHORS file for Copyright information
+/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -388,14 +388,15 @@ struct boss_cthunAI : public Scripted_NoMovementAI
             return;
 
         // Not weakened so reduce damage by 99% - workaround for missing spell 26156
-        if (uiDamage / 99 > 0)
-            uiDamage /= 99;
+        if (uiDamage / 50 > 0)
+            uiDamage /= 50;
         else
             uiDamage = 1;
 
         // Prevent death in non-weakened state
-        if (uiDamage >= m_creature->GetHealth())
-            uiDamage = 0;
+        // if (uiDamage >= m_creature->GetHealth())
+        if (uiDamage < 0)
+		uiDamage = 0;
     }
 
     void EnterEvadeMode() override
